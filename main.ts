@@ -1,5 +1,6 @@
 let led2 = 0
 input.onGesture(Gesture.Shake, function () {
+    basic.clearScreen()
     led2 = randint(0, 40)
     if (led2 == 0) {
         basic.showIcon(IconNames.Heart)
@@ -81,7 +82,12 @@ input.onGesture(Gesture.Shake, function () {
         basic.showIcon(IconNames.Square)
     } else if (led2 == 39) {
         basic.showIcon(IconNames.SmallSquare)
+    } else if (led2 == 40) {
+        basic.clearScreen()
     } else {
         basic.showIcon(IconNames.Scissors)
     }
+})
+input.onButtonPressed(Button.AB, function () {
+    basic.clearScreen()
 })
